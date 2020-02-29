@@ -33,5 +33,7 @@ public class Main {
         double m = p * ((r * pow_one_plus_r)/(pow_one_plus_r - 1));
         String result = NumberFormat.getCurrencyInstance().format(m);
         System.out.println("Mortgage: " + result);
+
+
     }
 }
