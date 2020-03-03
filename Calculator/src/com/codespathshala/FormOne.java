@@ -30,8 +30,12 @@ public class FormOne {
     private JPanel belowPanel;
     private JRadioButton radioButton1;
 
-    String value = "";
-    String store;
+    public String value = "";
+    public double firstValue;
+    public double secondValue;
+    public double answer;
+    public String stringAnswer;
+    public int operation;
 
     public FormOne() {
         zero.addActionListener(new ActionListener() {
@@ -45,13 +49,27 @@ public class FormOne {
         equal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                value = display.getText();
+                secondValue = Double.parseDouble(value);
+                if(operation == 1)
+                    answer = firstValue + secondValue;
+                else if(operation == 2)
+                    answer = firstValue - secondValue;
+                else if(operation == 3)
+                    answer = firstValue * secondValue;
+                else if(operation == 4)
+                    answer = firstValue / secondValue;
+                else
+                    display.setText("Error.!");
 
+                stringAnswer = String.valueOf(answer);
+                display.setText(stringAnswer);
             }
         });
         delete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                display.setText("");
             }
         });
         dot.addActionListener(new ActionListener() {
@@ -138,25 +156,38 @@ public class FormOne {
         div.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                display.setText("");
+                value = display.getText();
+                firstValue = Double.parseDouble(value);
+                operation = 4;
             }
         });
         sub.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                display.setText("");
+                value = display.getText();
+                firstValue = Double.parseDouble(value);
+                operation = 2;
 
             }
         });
         mul.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                display.setText("");
+                value = display.getText();
+                firstValue = Double.parseDouble(value);
+                operation = 3;
             }
         });
         add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                display.setText("");
+                value = display.getText();
+                firstValue = Double.parseDouble(value);
+                operation = 1;
             }
         });
     }
