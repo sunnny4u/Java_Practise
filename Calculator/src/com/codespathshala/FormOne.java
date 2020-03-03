@@ -156,18 +156,18 @@ public class FormOne {
         div.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText("");
                 value = display.getText();
                 firstValue = Double.parseDouble(value);
                 operation = 4;
+                display.setText("");
             }
         });
         sub.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText("");
                 value = display.getText();
                 firstValue = Double.parseDouble(value);
+                display.setText("");
                 operation = 2;
 
             }
@@ -175,19 +175,19 @@ public class FormOne {
         mul.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText("");
                 value = display.getText();
                 firstValue = Double.parseDouble(value);
+                display.setText("");
                 operation = 3;
             }
         });
         add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText("");
                 value = display.getText();
                 firstValue = Double.parseDouble(value);
                 operation = 1;
+                display.setText("");
             }
         });
     }
