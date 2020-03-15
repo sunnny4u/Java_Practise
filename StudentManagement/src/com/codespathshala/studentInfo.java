@@ -1,6 +1,10 @@
 package com.codespathshala;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 public class studentInfo {
     private JPanel panelMain;
@@ -20,6 +24,8 @@ public class studentInfo {
     private JButton btnAdd;
     private JButton btnEdit;
     private JButton btnDelete;
+    Connection con1;
+    PreparedStatement insert;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Record");
@@ -27,5 +33,17 @@ public class studentInfo {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    public studentInfo(){
+        String name = fieldName.getText();
+        int id = Integer.parseInt(fieldId.getText());
+        String courseName = fieldCourse.getText();
+        btnAdd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 }
